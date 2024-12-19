@@ -30,16 +30,33 @@ title: Welcome to our Data Story
 <div id="portfolio" class="section">
     <h1>First Data Insights</h1>
     <p>
-        Our portfolio showcases examples of our work and achievements.
+        However, the primary factor we need to consider is that movie ticket prices have been rising each year due to `inflation`. This leads to an increase in total box office revenue, even if the number of moviegoers remains steady or slightly declines. Therefore, we need to adjust for inflation's effect on box office revenue and introduce the `US-CPI` index as a measure of inflation. Below is a look on how adjusting for inflation puts into perspective how well movies in certain years might *actually* have performed by the standards of the time.
     </p>
-    <img src="/assets/images/fig_1.jpg" alt="Portfolio Image" class="section-image">
+    <img src="{{ '/assets/images/fig_1.jpg' | relative_url }}" alt="Portfolio Image" class="section-image">
+    <p>
+        We take a small look at the language makeup of our dataset, for a better idea that our use of the US-CPI index hopefully don’t overwhelmingly misrepresent movies from other countries:
+    </p>
+    <p>
+        Meanwhile, we take a detour in trying to (tentatively) see if movie runtime might’ve correlated with either the runtime or revenue a bit. As we can see, the relationship for either is not entirely straightforward. 
+    </p>
+    <p>
+        An even closer look, where we take a look at the distribution of runtime and revenue across runtime (in blue), and the distribution of movie counts in pink, might give us better insight.
+    </p>
+    <p>
+        Interestingly, longer runtimes also show a very subtle correlation with higher ratings (and a less subtle but still notable correlation with adjusted revenue). However, this trend is far from definitive and doesn’t necessarily imply that runtime directly influences either revenue or ratings. Instead, it may hint at a preference for films with enough time to develop compelling narratives, though other factors undoubtedly play a more significant role in a film’s success. 
+        We finally plot the adjusted revenue against movie ratings directly, with the color of each movie based on how well it performs comparatively both in critics ratings and box office performance. We can get a faint sense that whenever one increases, the other follows - but, of course, far from everything follows a neat linear regression line.
+    </p>
+    <p>
+        Feel free to explore below the timeline of movies being plotted on box office vs ratings, colored by each country of origin, throughout all the years included in the IMDb dataset
+    </p>
 </div>
 
 <!-- About Section -->
 <div id="about" class="section">
-    <h1>About</h1>
+    <h1>Discovering the Overperformers and Underperformers</h1>
     <p>
-        Learn more about our mission and the story behind our project.
+        Now that we’ve waded through all the data, it’s time to draw the line between the glittering overperformers and the tragically underperformers. To spot the outliers, we first need to define what’s “normal.” After all, one film’s blockbuster is another’s underwhelming flop, depending on context.
+        When we apply a log transformation to the dataset, the box office revenue becomes more evenly distributed, smoothing out extremes and bringing the data closer to resembling a linear relationship. This adjustment provides a clearer lens through which to identify the standouts—both those that defy expectations and those that fall short.
     </p>
 </div>
 
